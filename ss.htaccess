@@ -1,0 +1,47 @@
+RewriteEngine On
+
+# Redireciona variações de host problemáticas para a home
+RewriteCond %{HTTP_HOST} ^www\.grupogilardi\.com\.br\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.grupogilardi\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^grupogilardi\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^autodiscover\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^mail\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^cpcontacts\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.loreinpratas\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.viversemvicios\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^cpanel\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^webmail\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^grupogilardi\.com\.br\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.grupomatiastratamentos\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^cpcalendars\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^webdisk\.brasilinternacao\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.brasilinternacoes\.brasilinternacao\.com\.br$ [NC]
+RewriteRule ^ https://brasilinternacao.com.br/ [R=301,L]
+
+# Redireciona versões com www da home para a home canônica
+RewriteCond %{HTTP_HOST} ^www\.brasilinternacao\.com\.br$ [NC]
+RewriteRule ^$ https://brasilinternacao.com.br/ [R=301,L]
+
+# URLs específicas para redirecionar para a home
+RewriteRule ^clinica/clinica-de-recuperacao-em-conceicao-de-macabu-rj-ctm144/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-imperatriz-ma-ctm069/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/20-opcoes-de-clinicas-de-recuperacao-em-sp/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-patrocinio-mg-ctm060/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-aparecida-de-goiania-go-ctm041/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-atalaia-pr-ctm075/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-ilheus-ba-ctm105/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-itanhaem-sp-ctm001/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-no-ceara/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-itaborai-rj-ctm050/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-seropedica-rj-ctf-010/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-embu-guacu-sp-ctf040/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-eunapolis-ba/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-porto-belo-sc/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-baldim-mg-ctm057/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-guaratiba-rj-ctm013/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-guapimirim-rj/?$ https://brasilinternacao.com.br/ [R=301,L]
+
+# URLs truncadas/incompletas da sua lista
+RewriteRule ^clinica/clinica-de-recuperacao-em-apar/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-atal/?$ https://brasilinternacao.com.br/ [R=301,L]
+RewriteRule ^clinica/clinica-de-recuperacao-em-ribe/?$ https://brasilinternacao.com.br/ [R=301,L]
