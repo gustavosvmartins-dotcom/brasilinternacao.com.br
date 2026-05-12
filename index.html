@@ -144,6 +144,14 @@
       color: #274c77;
       font-weight: 700;
       font-size: 0.95rem;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .card-body {
@@ -192,7 +200,6 @@
       margin-bottom: 14px;
     }
 
-    .category-list,
     .simple-list {
       list-style: none;
       display: flex;
@@ -249,6 +256,12 @@
     .featured-box p {
       font-size: 0.92rem;
       color: var(--muted);
+    }
+
+    .loading-text,
+    .empty-text {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     footer {
@@ -316,56 +329,15 @@
     <section>
       <section class="section">
         <h2 class="section-title">Posts recentes</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <a href="/post-exemplo-1/">
-              <div class="card-image">Imagem do post</div>
-            </a>
-            <div class="card-body">
-              <div class="card-meta">31/03/2026 • Saúde</div>
-              <h3 class="card-title">
-                <a href="/post-exemplo-1/">Quanto custa fazer harmonização facial no Tatuapé?</a>
-              </h3>
-              <p class="card-excerpt">
-                Descubra os preços e detalhes sobre harmonização facial em um guia completo.
-              </p>
-              <a class="card-link" href="/post-exemplo-1/">Ler artigo</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="/post-exemplo-2/">
-              <div class="card-image">Imagem do post</div>
-            </a>
-            <div class="card-body">
-              <div class="card-meta">31/03/2026 • Saúde</div>
-              <h3 class="card-title">
-                <a href="/post-exemplo-2/">Quanto custa consulta com nutricionista em São Paulo?</a>
-              </h3>
-              <p class="card-excerpt">
-                Veja os fatores que influenciam o preço e como escolher bem.
-              </p>
-              <a class="card-link" href="/post-exemplo-2/">Ler artigo</a>
-            </div>
-          </article>
+        <div id="recent-posts-grid" class="cards-grid">
+          <p class="loading-text">Carregando posts recentes...</p>
         </div>
       </section>
 
       <section class="section">
         <h2 class="section-title">Destaques</h2>
-        <div class="featured-strip">
-          <article class="featured-box">
-            <h3><a href="/destaque-1/">Guia completo para entender custos e opções de procedimentos</a></h3>
-            <p>Conteúdos que merecem mais visibilidade na home.</p>
-          </article>
-          <article class="featured-box">
-            <h3><a href="/destaque-2/">Como escolher um bom profissional e evitar decisões erradas</a></h3>
-            <p>Área boa para featured posts mais importantes.</p>
-          </article>
-          <article class="featured-box">
-            <h3><a href="/destaque-3/">Perguntas que as pessoas mais fazem antes de contratar</a></h3>
-            <p>Também pode virar um bloco puxado do featured-posts.json.</p>
-          </article>
+        <div id="featured-posts-grid" class="featured-strip">
+          <p class="loading-text">Carregando destaques...</p>
         </div>
       </section>
     </section>
@@ -384,11 +356,8 @@
 
       <section class="sidebar-card">
         <h2 class="sidebar-title">Mais lidos</h2>
-        <ul class="simple-list">
-          <li><a href="/mais-lido-1/">Quanto custa harmonização facial em Moema?</a></li>
-          <li><a href="/mais-lido-2/">Quanto custa consulta com um nutrólogo?</a></li>
-          <li><a href="/mais-lido-3/">Como escolher um nutricionista em São Paulo</a></li>
-          <li><a href="/mais-lido-4/">Vale a pena investir em procedimentos estéticos?</a></li>
+        <ul id="featured-sidebar-list" class="simple-list">
+          <li class="loading-text">Carregando mais lidos...</li>
         </ul>
       </section>
     </aside>
@@ -399,5 +368,126 @@
       © 2026 Seu Blog. Todos os direitos reservados.
     </div>
   </footer>
+
+  <script>
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Erro ao carregar ' + path);
+      return response.json();
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderRecentPosts(posts) {
+      const container = document.getElementById('recent-posts-grid');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum post encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => `
+        <article class="card">
+          <a href="${escapeHtml(post.url)}">
+            <div class="card-image">
+              ${post.cover_image
+                ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.cover_image_alt || post.title)}">`
+                : 'Imagem do post'
+              }
+            </div>
+          </a>
+
+          <div class="card-body">
+            <div class="card-meta">
+              ${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}
+            </div>
+
+            <h3 class="card-title">
+              <a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a>
+            </h3>
+
+            <p class="card-excerpt">
+              ${escapeHtml(post.excerpt || '')}
+            </p>
+
+            <a class="card-link" href="${escapeHtml(post.url)}">Ler artigo</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderFeaturedPosts(posts) {
+      const container = document.getElementById('featured-posts-grid');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum destaque encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => `
+        <article class="featured-box">
+          <h3>
+            <a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a>
+          </h3>
+          <p>${escapeHtml(post.excerpt || '')}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderFeaturedSidebar(posts) {
+      const container = document.getElementById('featured-sidebar-list');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<li class="empty-text">Nenhum destaque encontrado.</li>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => `
+        <li>
+          <a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a>
+        </li>
+      `).join('');
+    }
+
+    async function loadHomeData() {
+      try {
+        const [recentPosts, featuredPosts] = await Promise.all([
+          fetchJson('/data/recent-posts.json'),
+          fetchJson('/data/featured-posts.json')
+        ]);
+
+        renderRecentPosts((recentPosts || []).slice(0, 6));
+        renderFeaturedPosts((featuredPosts || []).slice(0, 3));
+        renderFeaturedSidebar((featuredPosts || []).slice(0, 6));
+      } catch (error) {
+        console.error(error);
+
+        const recentContainer = document.getElementById('recent-posts-grid');
+        const featuredContainer = document.getElementById('featured-posts-grid');
+        const sidebarContainer = document.getElementById('featured-sidebar-list');
+
+        if (recentContainer) {
+          recentContainer.innerHTML = '<p class="empty-text">Não foi possível carregar os posts recentes.</p>';
+        }
+
+        if (featuredContainer) {
+          featuredContainer.innerHTML = '<p class="empty-text">Não foi possível carregar os destaques.</p>';
+        }
+
+        if (sidebarContainer) {
+          sidebarContainer.innerHTML = '<li class="empty-text">Não foi possível carregar os mais lidos.</li>';
+        }
+      }
+    }
+
+    loadHomeData();
+  </script>
 </body>
 </html>
