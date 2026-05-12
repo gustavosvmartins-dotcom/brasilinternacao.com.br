@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seu Blog</title>
+  <title>Blog Saúde</title>
   <meta name="description" content="Conteúdos sobre bem-estar, nutrição, saúde mental, saúde bucal, saúde da mulher, doenças, notícias e tendências." />
   <link rel="stylesheet" href="/css/blog-theme.css" />
   <style>
@@ -79,10 +79,6 @@
     }
 
     .homepage-main-nav {
-      display: none;
-    }
-
-    .homepage-search {
       display: none;
     }
 
@@ -420,20 +416,6 @@
         font-weight: 500;
       }
 
-      .homepage-search {
-        display: flex;
-        align-items: center;
-        min-width: 280px;
-        max-width: 280px;
-        height: 52px;
-        border: 1px solid var(--gray-20, #e0e0e0);
-        border-radius: 999px;
-        padding: 0 18px;
-        color: var(--gray-50, #a3a3a3);
-        font-size: 16px;
-        line-height: 24px;
-      }
-
       .homepage-featured-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -458,7 +440,7 @@
     <div class="container homepage-header__top">
       <a href="/" class="homepage-logo">
         <span class="homepage-logo__icon"></span>
-        <span class="homepage-logo__text">TUA <strong>SAÚDE</strong></span>
+        <span class="homepage-logo__text">BLOG <strong>SAÚDE</strong></span>
       </a>
 
       <nav class="homepage-main-nav">
@@ -467,14 +449,12 @@
         <a href="/categoria/saude-mental/">SAÚDE MENTAL</a>
         <a href="/categoria/saude-bucal/">SAÚDE BUCAL</a>
       </nav>
-
-      <div class="homepage-search">Busca IA do Tua Saúde</div>
     </div>
   </header>
 
   <main class="container">
     <div class="site-title-wrapper">
-      <div class="site-title">TUA SAÚDE - INFORMAÇÃO DE CONFIANÇA SOBRE SAÚDE, NUTRIÇÃO E BEM ESTAR</div>
+      <div class="site-title">BLOG SAÚDE - CONTEÚDOS SOBRE SAÚDE, NUTRIÇÃO, BEM-ESTAR E QUALIDADE DE VIDA</div>
     </div>
 
     <section class="homepage-section">
@@ -515,7 +495,7 @@
       <div class="container footer-wrapper">
         <a href="/" class="footer-logo">
           <span class="footer-logo__icon"></span>
-          <span class="footer-logo__text">TUA <strong>SAÚDE</strong></span>
+          <span class="footer-logo__text">BLOG <strong>SAÚDE</strong></span>
         </a>
 
         <div class="footer-text">
@@ -531,18 +511,9 @@
           </ul>
         </div>
 
-        <div class="social-links footer-social-links">
-          <span class="social-links-title">Acompanhe</span>
-          <ul>
-            <li><span class="icon">○</span><a href="/instagram/">Instagram</a></li>
-            <li><span class="icon">○</span><a href="/facebook/">Facebook</a></li>
-            <li><span class="icon">○</span><a href="/youtube/">YouTube</a></li>
-          </ul>
-        </div>
-
         <div class="footer-group">
           <div class="footer-update-copy">
-            <span>© 2026 Seu Blog</span>
+            <span>© 2026 Blog Saúde</span>
             <span class="dot"></span>
             <span>Todos os direitos reservados</span>
           </div>
@@ -565,6 +536,11 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      return dateStr;
     }
 
     function renderHeroPosts(posts) {
@@ -598,7 +574,7 @@
         return;
       }
 
-      container.innerHTML = posts.slice(0, 6).map(post => `
+      container.innerHTML = posts.slice(0, 12).map(post => `
         <a class="topic-article" href="${escapeHtml(post.url)}">
           <picture class="article-image">
             ${post.cover_image
@@ -623,11 +599,11 @@
         return;
       }
 
-      container.innerHTML = posts.slice(0, 8).map(post => `
+      container.innerHTML = posts.slice(0, 6).map(post => `
         <a class="recent-card" href="${escapeHtml(post.url)}">
           <div class="article-badge">${escapeHtml(post.category || 'Categoria')}</div>
           <h3 class="article-title">${escapeHtml(post.title)}</h3>
-          <div class="article-date">Criado em ${escapeHtml(post.date || '')}</div>
+          <div class="article-date">Criado em ${escapeHtml(formatDate(post.date || ''))}</div>
         </a>
       `).join('');
     }
@@ -642,9 +618,12 @@
         const recent = Array.isArray(recentPosts) ? recentPosts : [];
         const featured = Array.isArray(featuredPosts) ? featuredPosts : [];
 
-        renderHeroPosts(featured.length ? featured : recent);
-        renderTopicPosts(recent);
-        renderRecentPosts(recent);
+        const heroRecent = recent.slice(0, 2);
+        const otherRecent = recent.slice(2, 8);
+
+        renderHeroPosts(heroRecent);
+        renderTopicPosts(featured);
+        renderRecentPosts(otherRecent);
       } catch (error) {
         console.error(error);
         document.getElementById('hero-posts-grid').innerHTML = '<p class="empty-message">Não foi possível carregar os destaques.</p>';
