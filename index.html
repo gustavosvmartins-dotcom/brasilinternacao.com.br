@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html data-big-menu="1" lang="pt-BR" style="--header-height: 124px;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,53 +9,114 @@
   <style>
     .home-page {
       padding-bottom: 48px;
+      background: #fff;
     }
 
-    .page-grid {
+    .container {
       width: min(100% - 32px, 1200px);
       margin: 0 auto;
     }
 
+    .header-shell {
+      border-bottom: 1px solid var(--gray-20, #e0e0e0);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #3d3d3d;
+    }
+
+    .brand__logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #36b1df 0, #1cc5af 100%);
+      flex-shrink: 0;
+    }
+
+    .brand__name {
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: 600;
+      color: #3d3d3d;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-actions a {
+      color: #3d3d3d;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .product-menu {
+      position: sticky;
+      top: 72px;
+      z-index: 19;
+    }
+
+    .home-page .site-title-wrapper {
+      margin: 20px auto 16px;
+      max-width: 680px;
+    }
+
+    .home-page .site-title-wrapper .site-title {
+      text-align: center;
+      color: var(--gray-50, #7a7a7a);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
     .home-hero {
+      margin: 0 0 32px;
       background: #f2f6f9;
       border-radius: 12px;
       padding: 24px;
-      margin: 16px 0 32px;
-    }
-
-    .home-hero__kicker {
-      font-size: 12px;
-      line-height: 16px;
-      text-transform: uppercase;
-      color: #7a7a7a;
-      margin-bottom: 8px;
-      font-weight: 600;
     }
 
     .home-hero__title {
-      font-size: 28px;
-      line-height: 36px;
       color: #3d3d3d;
-      margin-bottom: 12px;
+      font-size: 32px;
+      line-height: 40px;
       font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .home-hero__text {
+      color: #3d3d3d;
       font-size: 16px;
       line-height: 24px;
-      color: #3d3d3d;
       max-width: 760px;
     }
 
     .home-layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: 24px;
-    }
-
-    .home-main,
-    .home-sidebar {
-      min-width: 0;
+      gap: 32px;
     }
 
     .home-section {
@@ -63,9 +124,9 @@
     }
 
     .home-section__title {
+      color: #3d3d3d;
       font-size: 24px;
       line-height: 32px;
-      color: #3d3d3d;
       font-weight: 600;
       margin-bottom: 16px;
     }
@@ -87,28 +148,36 @@
       font-size: 14px;
       line-height: 20px;
       font-weight: 500;
+      text-decoration: none;
     }
 
     .posts-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
     }
 
     .post-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
     }
 
     .post-card__thumb {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #edfaff;
+      width: 116px;
+      height: 77px;
+      border-radius: 8px;
       overflow: hidden;
+      background: #edfaff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a7a7a;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      text-decoration: none;
     }
 
     .post-card__thumb img {
@@ -118,94 +187,76 @@
       display: block;
     }
 
-    .post-card__thumb--empty {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7a7a7a;
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 500;
-    }
-
-    .post-card__body {
-      padding: 16px;
-    }
-
     .post-card__meta {
+      color: #7a7a7a;
       font-size: 12px;
       line-height: 16px;
-      color: #7a7a7a;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .post-card__title {
-      font-size: 20px;
-      line-height: 26px;
       color: #3d3d3d;
+      font-size: 18px;
+      line-height: 24px;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .post-card__excerpt {
-      font-size: 14px;
-      line-height: 22px;
-      color: #3d3d3d;
-      margin-bottom: 12px;
+    .post-card__title a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .post-card__link {
+    .post-card__excerpt {
+      color: #3d3d3d;
       font-size: 14px;
-      line-height: 20px;
-      color: #36b1df;
-      font-weight: 600;
-      text-transform: uppercase;
+      line-height: 22px;
     }
 
     .featured-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 20px;
     }
 
     .featured-box {
-      background: #fff;
+      padding: 20px;
       border: 1px solid rgba(75, 206, 255, .2);
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(75, 206, 255, .08);
-      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(75, 206, 255, .1);
+      background: #fff;
     }
 
     .featured-box__title {
+      color: #3d3d3d;
       font-size: 18px;
       line-height: 24px;
-      color: #3d3d3d;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
+    .featured-box__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .featured-box__excerpt {
+      color: #3d3d3d;
       font-size: 14px;
       line-height: 22px;
-      color: #3d3d3d;
     }
 
     .sidebar-card {
+      border: 1px solid var(--gray-20, #e0e0e0);
+      border-radius: 8px;
+      padding: 20px;
       background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.04);
-    }
-
-    .sidebar-card + .sidebar-card {
-      margin-top: 20px;
     }
 
     .sidebar-card__title {
+      color: #3d3d3d;
       font-size: 18px;
       line-height: 24px;
-      color: #3d3d3d;
       font-weight: 600;
       margin-bottom: 12px;
     }
@@ -217,9 +268,9 @@
     }
 
     .sidebar-list li + li {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
       margin-top: 12px;
       padding-top: 12px;
-      border-top: 1px solid #e0e0e0;
     }
 
     .sidebar-list a {
@@ -230,18 +281,66 @@
       text-decoration: none;
     }
 
-    .sidebar-list a:hover,
-    .post-card__title a:hover,
-    .featured-box__title a:hover {
-      color: #36b1df;
-    }
-
     .sidebar-meta {
       display: block;
       margin-top: 4px;
       color: #7a7a7a;
       font-size: 12px;
       line-height: 16px;
+    }
+
+    .footer-shell {
+      margin-top: 56px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      background: #f2f6f9;
+    }
+
+    .footer-top {
+      padding: 32px 0 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .footer-brand__title {
+      color: #3d3d3d;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand__text {
+      color: #3d3d3d;
+      font-size: 14px;
+      line-height: 22px;
+      max-width: 640px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #3d3d3d;
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+
+    .social-links {
+      margin-top: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      padding: 16px 0 24px;
+      color: #7a7a7a;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
     }
 
     .home-loading,
@@ -256,40 +355,69 @@
         padding-bottom: 80px;
       }
 
-      .home-hero {
-        padding: 32px;
-        margin: 24px 0 40px;
-      }
-
-      .home-hero__title {
-        font-size: 40px;
-        line-height: 48px;
+      .home-page .site-title-wrapper {
+        margin: 40px auto 24px;
       }
 
       .home-layout {
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: 32px;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 24px;
       }
 
       .posts-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
       }
 
       .featured-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .footer-top {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr) minmax(0, .8fr);
+        align-items: start;
       }
     }
   </style>
 </head>
 <body class="home-page">
-  <main class="page-grid">
+  <header class="header-shell">
+    <div class="container header-top">
+      <a href="/" class="brand">
+        <span class="brand__logo"></span>
+        <span class="brand__name">Seu Blog</span>
+      </a>
+
+      <div class="header-actions">
+        <a href="/sobre/">Sobre</a>
+        <a href="/contato/">Contato</a>
+      </div>
+    </div>
+
+    <nav class="product-menu">
+      <div class="container">
+        <ul>
+          <li><a data-active="1" data-type="blog" href="/">Início</a></li>
+          <li><a data-type="blog" href="/categoria/bem-estar/">Bem-estar</a></li>
+          <li><a data-type="blog" href="/categoria/nutricao/">Nutrição</a></li>
+          <li><a data-type="blog" href="/categoria/saude-mental/">Saúde mental</a></li>
+          <li><a data-type="blog" href="/categoria/saude-bucal/">Saúde bucal</a></li>
+          <li><a data-type="blog" href="/categoria/saude-da-mulher/">Saúde da mulher</a></li>
+          <li><a data-type="blog" href="/categoria/doencas/">Doenças</a></li>
+          <li><a data-type="blog" href="/categoria/noticias/">Notícias</a></li>
+          <li><a data-type="blog" href="/categoria/tendencias/">Tendências</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
     <div class="site-title-wrapper">
-      <div class="site-title">Portal de conteúdo</div>
+      <div class="site-title">Portal de saúde, bem-estar e informação</div>
     </div>
 
     <section class="home-hero">
-      <div class="home-hero__kicker">Conteúdo atualizado</div>
-      <h1 class="home-hero__title">Conteúdos, guias e informações para uma vida mais equilibrada</h1>
+      <h1 class="home-hero__title">Conteúdos para informar, orientar e facilitar sua decisão</h1>
       <p class="home-hero__text">
         Explore artigos sobre bem-estar, nutrição, saúde mental, saúde bucal, saúde da mulher, doenças, notícias e tendências.
       </p>
@@ -337,6 +465,37 @@
     </div>
   </main>
 
+  <footer class="footer-shell">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__title">Seu Blog</div>
+        <p class="footer-brand__text">
+          Conteúdos informativos e artigos atualizados para ajudar na busca por informação com mais clareza e contexto.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="/">Início</a>
+        <a href="/sobre/">Sobre</a>
+        <a href="/contato/">Contato</a>
+        <a href="/politica-de-privacidade/">Política de privacidade</a>
+      </div>
+
+      <div class="social-links">
+        <span class="social-links-title">Acompanhe</span>
+        <ul>
+          <li><span class="icon">○</span><a href="/instagram/">Instagram</a></li>
+          <li><span class="icon">○</span><a href="/facebook/">Facebook</a></li>
+          <li><span class="icon">○</span><a href="/youtube/">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      © 2026 Seu Blog. Todos os direitos reservados.
+    </div>
+  </footer>
+
   <script>
     async function fetchJson(path) {
       const response = await fetch(path, { cache: 'no-cache' });
@@ -363,21 +522,23 @@
 
       container.innerHTML = posts.map(post => `
         <article class="post-card">
-          <a class="post-card__thumb ${post.cover_image ? '' : 'post-card__thumb--empty'}" href="${escapeHtml(post.url)}">
+          <a class="post-card__thumb" href="${escapeHtml(post.url)}">
             ${post.cover_image
               ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.cover_image_alt || post.title)}">`
               : `Imagem do post`
             }
           </a>
-          <div class="post-card__body">
+
+          <div class="post-card__content">
             <div class="post-card__meta">
               ${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}
             </div>
+
             <h3 class="post-card__title">
               <a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a>
             </h3>
+
             <p class="post-card__excerpt">${escapeHtml(post.excerpt || '')}</p>
-            <a class="post-card__link" href="${escapeHtml(post.url)}">Ler artigo</a>
           </div>
         </article>
       `).join('');
