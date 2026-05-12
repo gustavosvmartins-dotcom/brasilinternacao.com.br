@@ -1,116 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html data-big-menu="1" lang="pt-BR" style="--header-height: 124px;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quanto custa consulta com um nutricionista em são paulo?</title>
+  <meta name="description" content="WAIT" />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
     }
 
-    :root {
-      --bg: #f6f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #0f4c81;
-      --border: #e5e7eb;
-      --max-width: 1240px;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    .blog-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--white, #fff);
+      border-bottom: 1px solid var(--gray-20, #e0e0e0);
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+    .blog-header__top {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    a {
-      color: var(--primary);
+    .blog-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--gray-100, #3d3d3d);
+      flex-shrink: 0;
+    }
+
+    .blog-logo__icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #36b1df 0, #1cc5af 100%);
+      position: relative;
+    }
+
+    .blog-logo__icon::before,
+    .blog-logo__icon::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .blog-logo__icon::before {
+      width: 14px;
+      height: 4px;
+      left: 9px;
+      top: 14px;
+    }
+
+    .blog-logo__icon::after {
+      width: 4px;
+      height: 14px;
+      left: 14px;
+      top: 9px;
+    }
+
+    .blog-logo__text {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #36b1df;
+    }
+
+    .blog-logo__text strong {
+      font-weight: 600;
+    }
+
+    .blog-main-nav {
+      display: none;
+    }
+
+    .blog-page {
+      padding: 24px 0 56px;
+    }
+
+    .breadcrumbs {
+      margin: 0 0 16px;
+      color: var(--gray-70, #7a7a7a);
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .breadcrumbs a {
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .wrap {
-      width: min(100% - 32px, var(--max-width));
-      margin: 40px auto;
-    }
-
-    .layout {
+    .page-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 28px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
     }
 
-    .post {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 36px;
-      box-shadow: var(--shadow);
+    .post-article {
+      min-width: 0;
     }
 
-    .post-meta {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .article-badge {
       margin-bottom: 14px;
     }
 
     .post-title {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.15;
-      margin-bottom: 18px;
+      color: var(--gray-100, #3d3d3d);
+      font-size: 34px;
+      line-height: 42px;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
 
     .post-excerpt {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 28px;
+      color: var(--gray-100, #3d3d3d);
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      color: var(--gray-70, #7a7a7a);
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
     }
 
     .post-cover {
-      width: 100%;
-      border-radius: 14px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
+      border-radius: 8px;
       overflow: hidden;
-      background: #eef2f7;
+      background: var(--gray-10, #f5f5f5);
     }
 
     .post-cover img {
-      display: block;
       width: 100%;
-      height: auto;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .post-content {
+      color: var(--gray-100, #3d3d3d);
+    }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+      color: var(--gray-100, #3d3d3d);
+      font-weight: 600;
     }
 
     .post-content h1 {
-      font-size: 2rem;
-      margin: 0 0 20px;
-      line-height: 1.2;
+      font-size: 30px;
+      line-height: 38px;
+      margin: 0 0 18px;
     }
 
     .post-content h2 {
-      font-size: 1.6rem;
-      margin: 34px 0 14px;
-      line-height: 1.25;
+      font-size: 26px;
+      line-height: 34px;
+      margin: 32px 0 14px;
     }
 
     .post-content h3 {
-      font-size: 1.25rem;
-      margin: 26px 0 12px;
-      line-height: 1.3;
+      font-size: 22px;
+      line-height: 30px;
+      margin: 24px 0 12px;
+    }
+
+    .post-content p,
+    .post-content li {
+      font-size: 18px;
+      line-height: 30px;
     }
 
     .post-content p {
       margin-bottom: 18px;
-      font-size: 1rem;
     }
 
     .post-content ul,
@@ -122,176 +196,311 @@
       margin-bottom: 8px;
     }
 
-    .post-content blockquote {
-      border-left: 4px solid var(--primary);
-      background: #f8fbff;
-      padding: 16px 18px;
-      margin: 24px 0;
-      color: #374151;
-      border-radius: 8px;
+    .post-content a {
+      color: var(--primary-60, #36b1df);
+      text-decoration: underline;
     }
 
     .post-content img {
       width: 100%;
-      border-radius: 14px;
+      display: block;
+      border-radius: 8px;
       margin: 24px 0;
     }
 
+    .post-content blockquote {
+      margin: 24px 0;
+      padding: 16px 20px;
+      border-left: 4px solid var(--primary-60, #36b1df);
+      background: #f2f6f9;
+      border-radius: 8px;
+    }
+
     .post-footer {
-      margin-top: 34px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      color: var(--gray-70, #7a7a7a);
+      font-size: 14px;
+      line-height: 20px;
     }
 
     .content-inline-related {
       margin: 28px 0 26px;
       padding-left: 14px;
       border-left: 4px solid #e67e22;
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     .content-inline-related-label {
-      font-weight: 800;
-      color: #4a4a4a;
+      font-weight: 700;
+      color: #3d3d3d;
     }
 
     .content-inline-related-link {
       color: #e67e22;
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 2px;
-    }
-
-    .content-inline-related-link:hover {
-      color: #c96a17;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .sidebar-card,
-    .bottom-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .sidebar-title,
-    .bottom-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .sidebar-list,
-    .bottom-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .sidebar-item,
-    .bottom-item {
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .sidebar-item:last-child,
-    .bottom-item:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .sidebar-link,
-    .bottom-link {
-      display: block;
-      color: var(--text);
       font-weight: 600;
-      line-height: 1.45;
-    }
-
-    .sidebar-link:hover,
-    .bottom-link:hover {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .sidebar-meta,
-    .bottom-meta {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.4;
+      text-decoration: underline;
     }
 
     .post-bottom {
-      margin-top: 28px;
+      margin-top: 36px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      padding-top: 24px;
+    }
+
+    .section-title {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 26px;
+      line-height: 34px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .bottom-list,
+    .sidebar-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .bottom-item,
+    .sidebar-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-20, #e0e0e0);
+    }
+
+    .bottom-item:first-child,
+    .sidebar-item:first-child {
+      padding-top: 0;
+    }
+
+    .bottom-item:last-child,
+    .sidebar-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .bottom-link,
+    .sidebar-link {
+      display: block;
+      color: var(--gray-100, #3d3d3d);
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .bottom-meta,
+    .sidebar-meta {
+      display: block;
+      margin-top: 6px;
+      color: var(--gray-70, #7a7a7a);
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .post-sidebar {
+      min-width: 0;
+    }
+
+    .sidebar-block {
+      position: sticky;
+      top: 100px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      padding-top: 20px;
     }
 
     .loading-text,
     .empty-text {
-      color: var(--muted);
-      font-size: 0.95rem;
+      color: var(--gray-70, #7a7a7a);
+      font-size: 14px;
+      line-height: 20px;
     }
 
-    @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-      }
+    #footer {
+      background: var(--footer-bg, #ebf0f4);
+      margin-top: 64px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
     }
 
-    @media (max-width: 768px) {
-      .wrap {
-        margin: 20px auto;
+    #footer .footer-tuasaude {
+      padding: 40px 0 0;
+    }
+
+    #footer .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--gray-100, #3d3d3d);
+    }
+
+    .footer-logo__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #36b1df 0, #1cc5af 100%);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .footer-logo__icon::before,
+    .footer-logo__icon::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .footer-logo__icon::before {
+      width: 12px;
+      height: 4px;
+      left: 8px;
+      top: 12px;
+    }
+
+    .footer-logo__icon::after {
+      width: 4px;
+      height: 12px;
+      left: 12px;
+      top: 8px;
+    }
+
+    .footer-logo__text {
+      color: #36b1df;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    .footer-logo__text strong {
+      font-weight: 600;
+    }
+
+    .footer-text {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 14px;
+      line-height: 22px;
+      max-width: 640px;
+    }
+
+    .footer-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-menu ul li a {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+
+    .footer-group {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      margin-top: 8px;
+    }
+
+    .footer-update-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      color: var(--gray-70, #7a7a7a);
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .footer-update-copy .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--primary-60, #36b1df);
+    }
+
+    @media screen and (min-width: 1050px) {
+      .blog-main-nav {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        flex: 1;
+        justify-content: center;
       }
 
-      .post {
-        padding: 22px;
+      .blog-main-nav a {
+        color: var(--gray-100, #3d3d3d);
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
       }
 
-      .sidebar-card,
-      .bottom-card {
-        padding: 18px;
+      .page-grid {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 48px;
+      }
+
+      #footer .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
       }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="layout">
-      <article class="post">
-        <div class="post-meta">
-          undefined • por undefined • Categoria: undefined
-        </div>
+  <header class="blog-header">
+    <div class="container blog-header__top">
+      <a href="/" class="blog-logo">
+        <span class="blog-logo__icon"></span>
+        <span class="blog-logo__text">BLOG <strong>SAÚDE</strong></span>
+      </a>
 
-        <h1 class="post-title">Quanto custa consulta com um nutricionista em são paulo?</h1>
+      <nav class="blog-main-nav">
+        <a href="/categoria/bem-estar/">BEM-ESTAR</a>
+        <a href="/categoria/nutricao/">NUTRIÇÃO</a>
+        <a href="/categoria/saude-mental/">SAÚDE MENTAL</a>
+        <a href="/categoria/saude-bucal/">SAÚDE BUCAL</a>
+      </nav>
+    </div>
+  </header>
 
-        <p class="post-excerpt">undefined</p>
+  <main class="blog-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Início</a> / <a href="/categoria/undefined/">undefined</a>
+      </div>
 
-        <div class="post-cover">
-          <img src="undefined" alt="undefined">
-        </div>
+      <div class="page-grid">
+        <article class="post-article">
+          <div class="article-badge">undefined</div>
 
-        <div class="post-content">
-          <h1>Quanto custa consulta com um nutricionista em são paulo?</h1>
+          <h1 class="post-title">Quanto custa consulta com um nutricionista em são paulo?</h1>
+
+          <p class="post-excerpt">undefined</p>
+
+          <div class="post-meta">
+            undefined
+          </div>
+
+          <div class="post-cover">
+            <img src="undefined" alt="undefined">
+          </div>
+
+          <div class="post-content">
+            <h1>Quanto custa consulta com um nutricionista em são paulo?</h1>
 
 <p>Quando o assunto é investir em saúde e bem-estar, buscar acompanhamento com um nutricionista é uma das decisões mais inteligentes. Em grandes cidades como São Paulo, a variedade de profissionais e serviços é enorme, o que pode gerar dúvidas sobre quanto custa uma avaliação nutricional.<br><br>Entender os principais fatores que influenciam o valor das consultas, conhecer as diferentes modalidades e saber onde buscar o apoio ideal são etapas fundamentais para tomar uma decisão informada. Neste artigo, você vai encontrar orientações claras para encontrar o atendimento nutricional ideal, de acordo com seu perfil, necessidades e possibilidades financeiras.</p>
 
@@ -318,32 +527,63 @@
 <h2>Conclusão</h2>
 
 <p>Ao analisar todos os fatores que influenciam o preço, desde localização e tipo de serviço até pacotes e formas de economizar, fica claro que é possível encontrar opções acessíveis e de qualidade em São Paulo.<br><br>Entender as particularidades do atendimento nutricional e buscar profissionais alinhados às suas necessidades faz toda diferença na experiência e nos resultados alcançados. Priorizar a saúde, com o suporte correto, é sempre um investimento que retorna em bem-estar, energia e prevenção de problemas ao longo do tempo. Não hesite em investir em acompanhamento nutricional e, assim, garantir uma vida mais equilibrada e saudável.</p>
-        </div>
+          </div>
 
-        <div class="post-footer">
-          Última atualização: undefined
-        </div>
+          <div class="post-footer">
+            Última atualização: undefined
+          </div>
 
-        <section class="post-bottom">
-          <div class="bottom-card">
-            <h2 class="bottom-title">Mais conteúdos para você</h2>
+          <section class="post-bottom">
+            <h2 class="section-title">Mais conteúdos para você</h2>
             <div id="bottom-featured-posts">
               <p class="loading-text">Carregando conteúdos...</p>
             </div>
-          </div>
-        </section>
-      </article>
+          </section>
+        </article>
 
-      <aside class="sidebar">
-        <section class="sidebar-card">
-          <h2 class="sidebar-title">Posts recentes</h2>
-          <div id="recent-posts">
-            <p class="loading-text">Carregando posts recentes...</p>
+        <aside class="post-sidebar">
+          <div class="sidebar-block">
+            <h2 class="section-title">Posts recentes</h2>
+            <div id="recent-posts">
+              <p class="loading-text">Carregando posts recentes...</p>
+            </div>
           </div>
-        </section>
-      </aside>
+        </aside>
+      </div>
     </div>
   </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="/" class="footer-logo">
+          <span class="footer-logo__icon"></span>
+          <span class="footer-logo__text">BLOG <strong>SAÚDE</strong></span>
+        </a>
+
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+
+        <div class="footer-menu">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Blog Saúde</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     async function fetchJson(path) {
