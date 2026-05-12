@@ -1,3 +1,50 @@
+.blog-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--white, #fff);
+  border-bottom: 1px solid var(--gray-20, #e0e0e0);
+}
+
+.blog-header__top {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.blog-main-nav {
+  display: none;
+}
+
+@media screen and (min-width: 1050px) {
+  .blog-main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .blog-main-nav a {
+    color: var(--gray-100, #3d3d3d);
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .blog-main-nav a:hover {
+    color: var(--primary-60, #36b1df);
+  }
+}
+
+
+
 .advertise-with-us-page .main-content .breadcrumbs {
     margin: 16px 0 10px;
     display: flex;
