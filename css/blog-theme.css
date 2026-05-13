@@ -24555,3 +24555,72 @@ header#header .top-mobile-ad-banner .top-ad-banner-slot {
         font-size: 1.6rem
     }
 }
+/* ===== BLOG HEADER ===== */
+.blog-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-header__top {
+  width: min(100% - 32px, 1120px);
+  margin: 0 auto;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.blog-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.blog-logo__image {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.blog-main-nav {
+  display: none;
+}
+
+.blog-main-nav a {
+  color: #3d3d3d;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.blog-main-nav a:hover {
+  color: #36b1df;
+}
+
+@media screen and (min-width: 1050px) {
+  .blog-main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== BLOG FOOTER LOGO ===== */
+.footer-logo__image {
+  height: 36px;
+  width: auto;
+  display: block;
+}
