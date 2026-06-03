@@ -1,5 +1,65 @@
 [
   {
+    "id": 13,
+    "title": "Como agendar uma consulta com nutricionista online de forma segura",
+    "slug": "/agendar-consulta-nutricionista-online-segura",
+    "url": "https://brasilinternacao.com.br/agendar-consulta-nutricionista-online-segura/",
+    "date": "3/6/2026",
+    "category": "",
+    "excerpt": "Aprenda a marcar consulta com nutricionista online de forma segura e prática, protegendo seus dados e garantindo acompanhamento profissional sem sair de casa.",
+    "cover_image": "/img/pexels-photo-15319047.jpeg",
+    "cover_image_alt": "Como agendar uma consulta com nutricionista online de forma segura",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 12,
+    "title": "3 sinais de que você precisa procurar um nutrólogo ainda este mês em São Paulo",
+    "slug": "/sinais-que-voce-precisa-procurar-nutrologo-sp",
+    "url": "https://brasilinternacao.com.br/sinais-que-voce-precisa-procurar-nutrologo-sp/",
+    "date": "3/6/2026",
+    "category": "",
+    "excerpt": "Saiba quando procurar um nutrólogo em São Paulo e descubra 3 sinais que indicam a necessidade desse acompanhamento para conquistar mais saúde e disposição.",
+    "cover_image": "/img/pexels-photo-15319038.jpeg",
+    "cover_image_alt": "3 sinais de que você precisa procurar um nutrólogo ainda este mês em São Paulo",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 11,
+    "title": "Botox para estética e saúde: onde os paulistanos mais têm buscado o tratamento",
+    "slug": "/botox-estetica-saude-sp",
+    "url": "https://brasilinternacao.com.br/botox-estetica-saude-sp/",
+    "date": "3/6/2026",
+    "category": "",
+    "excerpt": "Descubra os bairros de SP onde o Botox é mais procurado para estética e saúde e conheça dicas para escolher clínicas seguras e atualizadas. Aproveite os benefícios!",
+    "cover_image": "/img/pexels-photo-27925594.jpeg",
+    "cover_image_alt": "Botox para estética e saúde: onde os paulistanos mais têm buscado o tratamento",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 10,
+    "title": "Botox para estética ou saúde? Entenda os usos mais comuns em Campinas",
+    "slug": "/botox-estetica-saude-campinas",
+    "url": "https://brasilinternacao.com.br/botox-estetica-saude-campinas/",
+    "date": "3/6/2026",
+    "category": "",
+    "excerpt": "Entenda como o Botox pode transformar estética e tratar problemas de saúde em Campinas. Veja benefícios, aplicações e dicas para um procedimento seguro.",
+    "cover_image": "/img/pexels-photo-4586708.jpeg",
+    "cover_image_alt": "Botox para estética ou saúde? Entenda os usos mais comuns em Campinas",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 9,
+    "title": "Botox para estética ou saúde? Veja os usos mais comuns na região de Brasília",
+    "slug": "/botox-estetica-ou-saude-brasilia",
+    "url": "https://brasilinternacao.com.br/botox-estetica-ou-saude-brasilia/",
+    "date": "3/6/2026",
+    "category": "",
+    "excerpt": "Botox vai além da estética! Saiba como o botox é usado em Brasília para rejuvenescimento e tratamentos de saúde e veja como escolher um profissional seguro.",
+    "cover_image": "/img/pexels-photo-33506257.jpeg",
+    "cover_image_alt": "Botox para estética ou saúde? Veja os usos mais comuns na região de Brasília",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
     "id": 5,
     "title": "Melhor Agência de Marketing Odontológico: Como Escolher a Certa",
     "slug": "/melhor-agencia-marketing-odontologico",
@@ -9,18 +69,6 @@
     "excerpt": "Saiba como escolher a agência de marketing odontológico ideal e garanta mais pacientes para sua clínica. Descubra os erros a evitar e os critérios essenciais.",
     "cover_image": "/img/pexels-photo-8413334.jpeg",
     "cover_image_alt": "Melhor Agência de Marketing Odontológico: Como Escolher a Certa",
-    "author": "Luiz Gustavo Oliveira"
-  },
-  {
-    "id": 1,
-    "title": "Melhor Agência de Marketing Médico: Como Avaliar e Escolher",
-    "slug": "/melhor-agencia-marketing-medico",
-    "url": "https://brasilinternacao.com.br/melhor-agencia-marketing-medico/",
-    "date": "20/5/2026",
-    "category": "Notícias",
-    "excerpt": "Veja dicas práticas para avaliar e escolher a agência de marketing médico ideal, garantindo presença digital forte e crescimento para sua clínica ou consultório.",
-    "cover_image": "/img/pexels-photo-4173250.jpeg",
-    "cover_image_alt": "Melhor Agência de Marketing Médico: Como Avaliar e Escolher",
     "author": "Luiz Gustavo Oliveira"
   }
 ]
