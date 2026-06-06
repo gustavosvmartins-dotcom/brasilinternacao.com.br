@@ -1,5 +1,77 @@
 [
   {
+    "id": 25,
+    "title": "Quanto tempo dura o efeito do botox?",
+    "slug": "/quanto-tempo-dura-efeito-botox",
+    "url": "https://brasilinternacao.com.br/quanto-tempo-dura-efeito-botox/",
+    "date": "",
+    "category": "Notícias",
+    "excerpt": "Descubra quanto tempo dura o efeito do botox e quais cuidados ajudam a manter o resultado por mais tempo. Surpreenda-se com dicas para prolongar a juventude!",
+    "cover_image": "/img/pexels-photo-5659012.jpeg",
+    "cover_image_alt": "Quanto tempo dura o efeito do botox?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 24,
+    "title": "Botox preventivo: tendência entre pacientes mais jovens",
+    "slug": "/botox-preventivo-tendencia-jovens",
+    "url": "https://brasilinternacao.com.br/botox-preventivo-tendencia-jovens/",
+    "date": "",
+    "category": "Notícias",
+    "excerpt": "O botox preventivo se tornou tendência entre jovens que buscam retardar sinais de envelhecimento. Entenda seus benefícios, tendências e dicas essenciais!",
+    "cover_image": "/img/pexels-photo-14438369.jpeg",
+    "cover_image_alt": "Botox preventivo: tendência entre pacientes mais jovens",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 23,
+    "title": "Qual a idade ideal para começar a fazer botox?",
+    "slug": "/idade-ideal-comecar-botox",
+    "url": "https://brasilinternacao.com.br/idade-ideal-comecar-botox/",
+    "date": "",
+    "category": "Notícias",
+    "excerpt": "Saiba como definir a idade ideal para iniciar o botox e veja por que uma avaliação personalizada faz toda a diferença para resultados naturais e seguros.",
+    "cover_image": "/img/pexels-photo-11441410.jpeg",
+    "cover_image_alt": "Qual a idade ideal para começar a fazer botox?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 22,
+    "title": "Transtornos mais comuns tratados por psicólogos em São José dos Campos",
+    "slug": "/transtornos-comuns-psicologos-sao-jose-dos-campos",
+    "url": "https://brasilinternacao.com.br/transtornos-comuns-psicologos-sao-jose-dos-campos/",
+    "date": "",
+    "category": "Saúde Mental",
+    "excerpt": "Entenda quais transtornos psicológicos são mais atendidos por psicólogos em São José dos Campos e descubra como identificar sinais de alerta para uma vida mais saudável.",
+    "cover_image": "/img/pexels-photo-4148892.jpeg",
+    "cover_image_alt": "Transtornos mais comuns tratados por psicólogos em São José dos Campos",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 21,
+    "title": "Quais especialidades odontológicas são mais comuns em Taguatinga?",
+    "slug": "/especialidades-odontologicas-comuns-taguatinga",
+    "url": "https://brasilinternacao.com.br/especialidades-odontologicas-comuns-taguatinga/",
+    "date": "",
+    "category": "Saúde Bucal",
+    "excerpt": "Veja quais especialidades odontológicas têm mais procura em Taguatinga e descubra como encontrar o tratamento ideal para sua saúde bucal na região.",
+    "cover_image": "/img/pexels-photo-3881296.jpeg",
+    "cover_image_alt": "Quais especialidades odontológicas são mais comuns em Taguatinga?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 20,
+    "title": "O que levar em conta ao agendar uma consulta odontológica em Brasília",
+    "slug": "/consulta-odontologica-brasilia-o-que-avaliar",
+    "url": "https://brasilinternacao.com.br/consulta-odontologica-brasilia-o-que-avaliar/",
+    "date": "",
+    "category": "Saúde Bucal",
+    "excerpt": "Saiba quais critérios são essenciais ao marcar uma consulta odontológica em Brasília e descubra como garantir atendimento de qualidade para sua saúde bucal.",
+    "cover_image": "/img/pexels-photo-8413334.jpeg",
+    "cover_image_alt": "O que levar em conta ao agendar uma consulta odontológica em Brasília",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
     "id": 19,
     "title": "Guia rápido para agendar consulta com psiquiatra em Balsas",
     "slug": "/agendar-consulta-psiquiatra-balsas",
