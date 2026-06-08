@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primeira consulta odontológica: o que esperar?</title>
+  <meta name="description" content="Descubra o que esperar na primeira consulta odontológica, saiba como se preparar e tire dúvidas com seu dentista. Garanta sua saúde bucal, confira!" />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+
+    .blog-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .blog-header__top {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .blog-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .blog-logo__image {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .blog-main-nav {
+      display: none;
+    }
+
+    /* NAV DROPDOWN */
+    .blog-nav-dropdown { position: relative; }
+    .dropdown-toggle {
+      display: flex; align-items: center; gap: 4px;
+      color: #3d3d3d; font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0; font-family: inherit;
+    }
+    .dropdown-toggle:hover { color: #36b1df; }
+    .dropdown-toggle::after { content: "▾"; font-size: 12px; transition: transform 0.2s ease; }
+    .dropdown-toggle.active::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); right: 0;
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); min-width: 200px; z-index: 100; overflow: hidden;
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a {
+      display: block; padding: 12px 16px; color: #3d3d3d;
+      font-size: 14px; font-weight: 500; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: background 0.2s ease;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: #f5fbff; color: #36b1df; }
+
+    /* HAMBURGUER */
+    .blog-menu-toggle {
+      display: flex; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .blog-menu-toggle span { display: block; width: 24px; height: 2px; background: #3d3d3d; border-radius: 2px; transition: all 0.3s ease; }
+    .blog-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .blog-menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .blog-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MOBILE MENU */
+    .blog-mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid #e0e0e0; padding: 16px 0; }
+    .blog-mobile-menu.open { display: flex; }
+    .blog-mobile-menu a { padding: 12px 16px; color: #3d3d3d; font-size: 14px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #f0f0f0; }
+    .blog-mobile-menu a:last-child { border-bottom: none; }
+    .blog-mobile-menu a:hover { color: #36b1df; }
+
+    .blog-page {
+      padding: 24px 0 56px;
+    }
+
+    .breadcrumbs {
+      margin: 0 0 16px;
+      color: #7a7a7a;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .breadcrumbs a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .post-article { min-width: 0; }
+
+    .article-badge { margin-bottom: 14px; }
+
+    .post-title {
+      color: #3d3d3d;
+      font-size: 34px;
+      line-height: 42px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .post-excerpt {
+      color: #3d3d3d;
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      color: #7a7a7a;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    .post-cover {
+      margin-bottom: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .post-cover img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .post-content { color: #3d3d3d; }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+      color: #3d3d3d;
+      font-weight: 600;
+    }
+
+    .post-content h1 { font-size: 30px; line-height: 38px; margin: 0 0 18px; }
+    .post-content h2 { font-size: 26px; line-height: 34px; margin: 32px 0 14px; }
+    .post-content h3 { font-size: 22px; line-height: 30px; margin: 24px 0 12px; }
+
+    .post-content p,
+    .post-content li { font-size: 18px; line-height: 30px; }
+
+    .post-content p { margin-bottom: 18px; }
+    .post-content ul, .post-content ol { margin: 0 0 20px 22px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content a { color: #36b1df; text-decoration: underline; }
+    .post-content img { width: 100%; display: block; border-radius: 8px; margin: 24px 0; }
+    .post-content blockquote {
+      margin: 24px 0; padding: 16px 20px;
+      border-left: 4px solid #36b1df;
+      background: #f2f6f9; border-radius: 8px;
+    }
+
+    .post-footer {
+      margin-top: 32px; padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      color: #7a7a7a; font-size: 14px; line-height: 20px;
+    }
+
+    .content-inline-related {
+      margin: 28px 0 26px; padding-left: 14px;
+      border-left: 4px solid #e67e22;
+      font-size: 16px; line-height: 24px;
+    }
+
+    .content-inline-related-label { font-weight: 700; color: #3d3d3d; }
+    .content-inline-related-link { color: #e67e22; font-weight: 600; text-decoration: underline; }
+
+    .post-bottom {
+      margin-top: 36px; border-top: 1px solid #e0e0e0; padding-top: 24px;
+    }
+
+    .section-title {
+      color: #3d3d3d; font-size: 26px; line-height: 34px;
+      font-weight: 600; margin-bottom: 20px;
+    }
+
+    .bottom-list, .sidebar-list { list-style: none; margin: 0; padding: 0; }
+
+    .bottom-item, .sidebar-item {
+      padding: 16px 0; border-bottom: 1px solid #e0e0e0;
+    }
+
+    .bottom-item:first-child, .sidebar-item:first-child { padding-top: 0; }
+    .bottom-item:last-child, .sidebar-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .bottom-link, .sidebar-link {
+      display: block; color: #3d3d3d;
+      font-size: 18px; line-height: 26px;
+      font-weight: 600; text-decoration: none;
+    }
+
+    .bottom-meta, .sidebar-meta {
+      display: block; margin-top: 6px;
+      color: #7a7a7a; font-size: 13px; line-height: 18px;
+    }
+
+    .post-sidebar { min-width: 0; }
+
+    .sidebar-block {
+      position: sticky; top: 100px;
+      border-top: 1px solid #e0e0e0; padding-top: 20px;
+    }
+
+    .loading-text, .empty-text { color: #7a7a7a; font-size: 14px; line-height: 20px; }
+
+    #footer {
+      background: #ebf0f4; margin-top: 64px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    #footer .footer-tuasaude { padding: 40px 0 0; }
+
+    #footer .footer-wrapper {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+    }
+
+    .footer-logo {
+      display: inline-flex; align-items: center;
+      gap: 10px; text-decoration: none;
+    }
+
+    .footer-logo__image { height: 36px; width: auto; display: block; }
+
+    .footer-text { color: #3d3d3d; font-size: 14px; line-height: 22px; max-width: 640px; }
+
+    .footer-menu ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+
+    .footer-menu ul li a { color: #3d3d3d; font-size: 14px; line-height: 20px; text-decoration: none; }
+
+    .footer-group { border-top: 1px solid #e0e0e0; margin-top: 8px; }
+
+    .footer-update-copy {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 10px; padding: 20px 0; color: #7a7a7a;
+      font-size: 12px; line-height: 16px;
+    }
+
+    .footer-update-copy .dot {
+      width: 4px; height: 4px; border-radius: 50%; background: #36b1df;
+    }
+
+    @media screen and (min-width: 1050px) {
+      .blog-main-nav {
+        display: flex; align-items: center; gap: 32px;
+        flex: 1; justify-content: center;
+      }
+
+      .blog-main-nav a {
+        color: #3d3d3d; text-decoration: none;
+        font-size: 14px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.5px;
+        transition: color 0.2s ease;
+      }
+
+      .blog-main-nav a:hover { color: #36b1df; }
+
+      .blog-menu-toggle { display: none; }
+      .blog-mobile-menu { display: none !important; }
+
+      .page-grid {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 48px;
+      }
+
+      #footer .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+  <link rel="shortcut icon" href="/img/favicon-medico.webp">
+  <link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+  <meta name="google-site-verification" content="3_n8NhJKBgOFjxAJrzEJrnA9YGUpfS9gfD1Jg8VlVxw" />
+</head>
+<body>
+  <header class="blog-header">
+    <div class="container blog-header__top">
+      <a href="https://brasilinternacao.com.br" class="blog-logo">
+        <img src="/img/logo-blog.webp" alt="Brasil Internação" class="blog-logo__image">
+      </a>
+
+      <nav class="blog-main-nav">
+        <a href="/categoria/saude/">Saúde</a>
+        <a href="/categoria/bem-estar/">Bem-estar</a>
+        <a href="/categoria/noticias/">Notícias</a>
+        <div class="blog-nav-dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+          <div class="dropdown-menu">
+            <a href="/categoria/doencas/">Doenças</a>
+            <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+            <a href="/categoria/saude-mental/">Saúde Mental</a>
+            <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+            <a href="/categoria/nutricao/">Nutrição</a>
+            <a href="/categoria/fitness/">Fitness</a>
+          </div>
+        </div>
+      </nav>
+
+      <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="blog-mobile-menu">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <a href="/categoria/doencas/">Doenças</a>
+      <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+      <a href="/categoria/saude-mental/">Saúde Mental</a>
+      <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+      <a href="/categoria/nutricao/">Nutrição</a>
+      <a href="/categoria/fitness/">Fitness</a>
+    </div>
+  </header>
+
+  <script>
+    function toggleDropdown(btn) {
+      const menu = btn.nextElementSibling;
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+      document.addEventListener('click', function closeMenu(e) {
+        if (!btn.parentElement.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.classList.remove('active');
+          document.removeEventListener('click', closeMenu);
+        }
+      });
+    }
+
+    function toggleMobileMenu(btn) {
+      const menu = document.querySelector('.blog-mobile-menu');
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+  <main class="blog-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Início</a> / <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+      </div>
+
+      <div class="page-grid">
+        <article class="post-article">
+          <div class="article-badge">Saúde Bucal</div>
+
+          <h1 class="post-title">Primeira consulta odontológica: o que esperar?</h1>
+
+          <p class="post-excerpt">Entenda como funciona a primeira consulta odontológica, o que acontece nela e como se preparar para garantir um atendimento tranquilo e eficiente.</p>
+
+          <div class="post-meta">
+             • por Luiz Gustavo Oliveira
+          </div>
+
+          <div class="post-cover">
+            <img src="/img/pexels-photo-8413334.jpeg" alt="Primeira consulta odontológica: o que esperar?">
+          </div>
+
+          <div class="post-content">
+            
+
+<p>Entrar no consultório de um dentista pela primeira vez pode trazer uma mistura de ansiedade e curiosidade, principalmente para quem não faz visitas regulares ao profissional. Muitas pessoas ficam com dúvidas sobre o que vai acontecer e como se preparar para esse momento tão importante para a saúde bucal.<br><br>Entender o que esperar pode ajudar a aliviar o nervosismo e tornar a experiência mais tranquila e positiva. Este artigo foi pensado para te guiar em cada etapa desse processo, esclarecendo os pontos essenciais desde a preparação até o cuidado posterior à consulta. Acompanhe e descubra tudo o que você precisa saber para se sentir seguro nesse primeiro contato!</p>
+
+<h2>Importância da primeira consulta odontológica</h2>
+
+<p>Buscar um atendimento odontológico adequado logo na primeira consulta é essencial para garantir a identificação precoce de possíveis problemas bucais. Essa avaliação inicial permite não apenas um diagnóstico preciso, mas também a criação de um plano de cuidados personalizado, adequado às necessidades de cada paciente.<br><br>Um profissional experiente, como um <a href="https://odontologiacuritiba.com.br">Dentista Curitiba</a>, pode orientar sobre práticas preventivas e indicar tratamentos necessários antes que situações mais complexas se desenvolvam. Além disso, o primeiro encontro é fundamental para esclarecer dúvidas, estabelecer uma relação de confiança e mostrar que cuidar da saúde bucal pode ser algo positivo e tranquilo. Por isso, não subestime a importância desse primeiro passo!</p>
+
+<h2>Preparação para a visita ao dentista</h2>
+
+<p>Antes do dia marcado, reserve um tempo para reunir informações importantes, como dados de saúde, alergias e eventuais queixas bucais que você deseja relatar ao dentista. Trazer anotações ou exames anteriores também pode facilitar o atendimento.<br><br>Procure chegar alguns minutos antes do horário agendado para preencher eventuais formulários e evitar atrasos. Vestir roupas confortáveis e evitar refeições pesadas logo antes do atendimento contribui para que você esteja relaxado. Tente pensar em perguntas que gostaria de fazer, pois o ambiente é propício para esclarecer todas as suas dúvidas e expectativas.<br><br>Essa preparação torna a visita mais produtiva e ajuda a construir uma boa relação com o profissional logo de início.</p>
+
+
+<div class="content-inline-related">
+  <span class="content-inline-related-label">Veja mais:</span>
+  <a href="https://brasilinternacao.com.br/botox-estetica-ou-saude-brasilia/" class="content-inline-related-link">Botox para estética ou saúde? Veja os usos mais comuns na região de Brasília</a>
+</div>
+
+<h2>Procedimentos comuns durante a consulta inicial</h2>
+
+<p>Logo ao chegar, um breve bate-papo sobre seu histórico de saúde costuma iniciar a consulta. O exame clínico minucioso dos dentes, gengivas e demais estruturas da boca permite ao dentista avaliar seu estado geral e detectar possíveis problemas, como cáries ou inflamações.<br><br>Frequentemente, radiografias panorâmicas ou exames complementares podem ser solicitados para uma análise mais aprofundada. O profissional também pode realizar a limpeza preventiva, removendo tártaro e placa bacteriana, caso seja necessário.<br><br>Todo o processo é feito de modo cuidadoso, priorizando seu conforto e esclarecendo eventuais dúvidas que surgirem. Assim, essa etapa inicial é fundamental para personalizar o atendimento e definir os próximos passos do tratamento.</p>
+
+<h2>Dicas para tirar melhor proveito da consulta</h2>
+
+<p>Uma boa comunicação é fundamental para garantir que todas as suas necessidades sejam atendidas. Procure relatar de forma honesta sintomas, hábitos e expectativas de tratamento.<br><br>Aproveite para perguntar sobre as melhores práticas de higiene bucal, produtos recomendados e como prevenir problemas futuros. Anotar as orientações recebidas facilita lembrar das recomendações ao chegar em casa.<br><br>Não hesite em tirar dúvidas sobre procedimentos sugeridos, custos e tempo de tratamento. Por fim, mantenha a mente aberta às orientações do profissional, buscando estabelecer uma parceria saudável em prol do seu bem-estar. Essas atitudes transformam a consulta em uma experiência produtiva e valiosa para sua saúde.</p>
+
+
+<div class="content-inline-related">
+  <span class="content-inline-related-label">Veja mais:</span>
+  <a href="https://brasilinternacao.com.br/clareamento-dental-seguro-sao-paulo/" class="content-inline-related-link">Onde fazer clareamento dental com segurança em São Paulo?</a>
+</div>
+
+<h2>Como manter a saúde bucal após a primeira consulta</h2>
+
+<p>A consulta inicial é só o primeiro passo para uma rotina de cuidados eficaz. Manter a disciplina com a escovação correta após as refeições, o uso diário do fio dental e evitar o excesso de açúcares são medidas essenciais para preservar o que foi conquistado.<br><br>Seguir as orientações do dentista quanto ao uso de enxaguantes ou tratamentos específicos potencializa os resultados. Além disso, respeitar o intervalo das visitas regulares ao profissional ajuda na prevenção e no controle de possíveis problemas.<br><br>Alimentação balanceada e hidratação também contribuem para a saúde da boca. Lembre-se sempre: os cuidados contínuos são tão importantes quanto a primeira consulta para garantir um sorriso saudável e confiante.</p>
+
+<h2>Conclusão</h2>
+
+<p>Em resumo, o início do acompanhamento odontológico oferece benefícios que vão além de identificar e tratar problemas existentes. Com a orientação de um <a href="https://odontologiacuritiba.com.br">Dentista Curitiba</a>, é possível criar hábitos de prevenção mais sólidos e efetivos.<br><br>Preparar-se para a consulta, participar ativamente do atendimento e cumprir os cuidados recomendados são passos fundamentais para manter uma saúde bucal em dia. Assim, cada visita ao dentista se transforma em uma oportunidade de investir no bem-estar, autoestima e qualidade de vida. Aproveite esse começo para construir uma relação positiva com o profissional e cuidar do seu sorriso com confiança!</p>
+          </div>
+
+          <div class="post-footer">
+            Última atualização: 
+          </div>
+
+          <section class="post-bottom">
+            <h2 class="section-title">Mais conteúdos para você</h2>
+            <div id="bottom-featured-posts">
+              <p class="loading-text">Carregando conteúdos...</p>
+            </div>
+          </section>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="sidebar-block">
+            <h2 class="section-title">Posts recentes</h2>
+            <div id="recent-posts">
+              <p class="loading-text">Carregando posts recentes...</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="/" class="footer-logo">
+          <img src="/img/logo-blog.webp" alt="Brasil Internação" class="footer-logo__image">
+        </a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Brasil Internação</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Erro ao carregar ' + path);
+      return response.json();
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizePath(url) {
+      try {
+        const parsed = new URL(url, window.location.origin);
+        return parsed.pathname.replace(/\/+$/, '') || '/';
+      } catch {
+        return String(url || '')
+          .replace(window.location.origin, '')
+          .replace(/\/+$/, '') || '/';
+      }
+    }
+
+    function renderRecentPosts(posts) {
+      const container = document.getElementById('recent-posts');
+      if (!container) return;
+      if (!posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum post recente encontrado.</p>';
+        return;
+      }
+      container.innerHTML = `
+        <ul class="sidebar-list">
+          ${posts.map(post => `
+            <li class="sidebar-item">
+              <a href="${escapeHtml(post.url)}" class="sidebar-link">${escapeHtml(post.title)}</a>
+              <span class="sidebar-meta">${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+
+    function renderBottomFeatured(posts) {
+      const container = document.getElementById('bottom-featured-posts');
+      if (!container) return;
+      if (!posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum conteúdo adicional encontrado.</p>';
+        return;
+      }
+      container.innerHTML = `
+        <ul class="bottom-list">
+          ${posts.map(post => `
+            <li class="bottom-item">
+              <a href="${escapeHtml(post.url)}" class="bottom-link">${escapeHtml(post.title)}</a>
+              <span class="bottom-meta">${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+
+    async function loadDynamicPostWidgets() {
+      try {
+        const currentPath = normalizePath(window.location.pathname);
+        const [recentPostsRaw, featuredPostsRaw] = await Promise.all([
+          fetchJson('/data/recent-posts.json'),
+          fetchJson('/data/featured-posts.json')
+        ]);
+        const recentPosts = Array.isArray(recentPostsRaw) ? recentPostsRaw : [];
+        const featuredPosts = Array.isArray(featuredPostsRaw) ? featuredPostsRaw : [];
+        const filteredRecent = recentPosts.filter(post => normalizePath(post.url) !== currentPath).slice(0, 6);
+        const bottomFeatured = featuredPosts.filter(post => normalizePath(post.url) !== currentPath).slice(0, 12);
+        renderRecentPosts(filteredRecent);
+        renderBottomFeatured(bottomFeatured);
+      } catch (error) {
+        console.error(error);
+        const recentEl = document.getElementById('recent-posts');
+        const bottomEl = document.getElementById('bottom-featured-posts');
+        if (recentEl) recentEl.innerHTML = '<p class="empty-text">Não foi possível carregar os posts recentes.</p>';
+        if (bottomEl) bottomEl.innerHTML = '<p class="empty-text">Não foi possível carregar os conteúdos relacionados.</p>';
+      }
+    }
+
+    loadDynamicPostWidgets();
+  </script>
+</body>
+</html>
