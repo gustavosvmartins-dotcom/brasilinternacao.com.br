@@ -1,5 +1,77 @@
 [
   {
+    "id": 31,
+    "title": "Primeira consulta odontológica: o que esperar?",
+    "slug": "/primeira-consulta-odontologica-o-que-esperar",
+    "url": "https://brasilinternacao.com.br/primeira-consulta-odontologica-o-que-esperar/",
+    "date": "",
+    "category": "Saúde Bucal",
+    "excerpt": "Entenda como funciona a primeira consulta odontológica, o que acontece nela e como se preparar para garantir um atendimento tranquilo e eficiente.",
+    "cover_image": "/img/pexels-photo-8413334.jpeg",
+    "cover_image_alt": "Primeira consulta odontológica: o que esperar?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 30,
+    "title": "5 sinais de que sua saúde mental merece atenção",
+    "slug": "/sinais-saude-mental-atencao",
+    "url": "https://brasilinternacao.com.br/sinais-saude-mental-atencao/",
+    "date": "",
+    "category": "Saúde Mental",
+    "excerpt": "Você reconhece os sinais que indicam que sua saúde mental merece atenção? Descubra quais sintomas não ignorar e como buscar o cuidado que faz diferença.",
+    "cover_image": "/img/pexels-photo-7176296.jpeg",
+    "cover_image_alt": "5 sinais de que sua saúde mental merece atenção",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 29,
+    "title": "Qual a melhor idade para começar a aplicar botox?",
+    "slug": "/melhor-idade-para-aplicar-botox",
+    "url": "https://brasilinternacao.com.br/melhor-idade-para-aplicar-botox/",
+    "date": "",
+    "category": "Notícias",
+    "excerpt": "Entenda quando iniciar a aplicação de botox, os benefícios em cada idade e como garantir resultados naturais e seguros para sua pele e autoestima.",
+    "cover_image": "/img/pexels-photo-3762400.jpeg",
+    "cover_image_alt": "Qual a melhor idade para começar a aplicar botox?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 28,
+    "title": "A partir de qual idade você pode pensar em fazer botox?",
+    "slug": "/idade-para-comecar-botox",
+    "url": "https://brasilinternacao.com.br/idade-para-comecar-botox/",
+    "date": "",
+    "category": "Notícias",
+    "excerpt": "Saiba a partir de qual idade o botox pode ser uma opção para prevenção de rugas, os cuidados necessários e fatores que influenciam a decisão.",
+    "cover_image": "/img/pexels-photo-3760914.jpeg",
+    "cover_image_alt": "A partir de qual idade você pode pensar em fazer botox?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 27,
+    "title": "Como funciona a consulta com um cirurgião plástico em Curitiba?",
+    "slug": "/consulta-cirurgiao-plastico-curitiba",
+    "url": "https://brasilinternacao.com.br/consulta-cirurgiao-plastico-curitiba/",
+    "date": "",
+    "category": "Fitness",
+    "excerpt": "Descubra o passo a passo da consulta com cirurgião plástico em Curitiba e saiba como ter uma experiência segura e esclarecedora para alcançar seus objetivos estéticos.",
+    "cover_image": "/img/pexels-photo-28727569.jpeg",
+    "cover_image_alt": "Como funciona a consulta com um cirurgião plástico em Curitiba?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
+    "id": 26,
+    "title": "Como funciona a consulta com um cirurgião plástico em São Paulo?",
+    "slug": "/consulta-cirurgiao-plastico-sao-paulo",
+    "url": "https://brasilinternacao.com.br/consulta-cirurgiao-plastico-sao-paulo/",
+    "date": "",
+    "category": "Fitness",
+    "excerpt": "Entenda como funciona cada etapa da consulta com um cirurgião plástico em São Paulo e saiba como garantir segurança e confiança antes de seu procedimento.",
+    "cover_image": "/img/pexels-photo-4769133.jpeg",
+    "cover_image_alt": "Como funciona a consulta com um cirurgião plástico em São Paulo?",
+    "author": "Luiz Gustavo Oliveira"
+  },
+  {
     "id": 25,
     "title": "Quanto tempo dura o efeito do botox?",
     "slug": "/quanto-tempo-dura-efeito-botox",
